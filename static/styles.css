@@ -1,0 +1,18 @@
+.preview-img {
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: 10px;
+    display: block;
+    margin-top: 5px;
+}
+
+:root {
+  color-scheme: light;
+  --background: url('https://png.pngtree.com/background/20231231/original/pngtree-lush-green-grass-texture-a-natural-high-resolution-background-in-3d-picture-image_7042067.jpg');
+}
+
+:root.dark {
+  color-scheme: dark;
+  --background: url('https://img.freepik.com/foto-gratis/tierra-textura-roca_1339-4254.jpg');
+}
+
