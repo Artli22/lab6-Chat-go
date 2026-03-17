@@ -8,10 +8,31 @@
 
 :root {
   color-scheme: light;
-  --background: url('https://png.pngtree.com/background/20231231/original/pngtree-lush-green-grass-texture-a-natural-high-resolution-background-in-3d-picture-image_7042067.jpg');
+  --background: url('https://i.pinimg.com/originals/79/3d/f7/793df797732aaf145a0f8a40d7e92cc1.jpg?nii=t');
 }
 
 :root.dark {
   color-scheme: dark;
-  --background: url('https://img.freepik.com/foto-gratis/tierra-textura-roca_1339-4254.jpg');
+  --background: url('https://tse4.mm.bing.net/th/id/OIP.0f12IlXomCX6LfJMBmnGVQHaNK?rs=1&pid=ImgDetMain&o=7&rm=3');
+}
+
+body {
+    padding-bottom: 150px;
+    background-image: var(--background);
+    background-size: cover;     
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: light-dark(white, black);
+    opacity: 0.9;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
