@@ -31,7 +31,15 @@ const getMessages = async () =>{
         counter.textContent = `${textarea.value.length}/${maxLength}`
     })
 
+    textarea.addEventListener('keypress', function(event) {
+        if(event.key === 'Enter') {
+            event.preventDefault()
+            document.getElementById('send').click()
+        }
+    })
+
     getMessages()
+    setInterval(getMessages, 5000)
 
     document.getElementById('send').addEventListener('click', () => {
         const message = document.getElementById('message').value
@@ -39,6 +47,7 @@ const getMessages = async () =>{
             alert(`Mucho texto! El mensaje no puede superar los 140 caracteres.`)
             return
         }
+
         postMessages({
         user: 'Arthur Morgan',
         text: message
