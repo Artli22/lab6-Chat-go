@@ -7,7 +7,21 @@ const getMessages = async () =>{
         for(let i =0; i<messages.length;i++){
             const message = messages[i]
             const li =document.createElement('li')
-            li.innerHTML=`<strong> ${message.user}:</strong> ${message.text}`
+            
+            const image = /(https?:\/\/[^\s]+\.(?:jpg|jpeg|png|gif|webp))/i
+            const match = message.text.match(image)
+            let textContent = message.text
+            let imageUrl = null
+            if(match) {
+                imageUrl = match[1]
+                textContent = message.text.replace(image, '').trim()
+            }
+            let htmlContent = `<strong> ${message.user}:</strong> ${textContent}`
+            if(imageUrl) {
+                htmlContent += `<br><img src="${imageUrl}" style="max-width: 200px; max-height: 200px; border-radius: 10px; margin-top: 5px;">`
+            }
+            
+            li.innerHTML = htmlContent
             console.log("message",message)
             ul.append(li) 
         }
